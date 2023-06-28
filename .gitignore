@@ -5,3 +5,10 @@
 # python files
 *.pyc
 *__pycache__*
+
+# data and figures
+*.pdf
+*.eps
+./figs/*
+./data/*
+
