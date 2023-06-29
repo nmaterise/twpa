@@ -12,5 +12,6 @@ using Reexport
 # Export the circuits
 include("circuits.jl")
 export twpa_uniform_circuit
+export twpa_floquet_circuit
 
 end
