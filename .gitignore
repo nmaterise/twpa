@@ -1,6 +1,7 @@
 # vim files
 *.swp
 *.swo
+tags
 
 # python files
 *.pyc

@@ -25,7 +25,7 @@ Returns:
 *  circuitdefs::Dict    dictionary of circuit parameters
 
 """
-function twpa_uniform_circuit(Nj::Int64, pmrpitch::Int64)
+function twpa_uniform_circuit(circuit_params::Dict, Nj::Int64, pmrpitch::Int64)
     # Setup variable names
     @variables Rleft Rright Cg Lj Cj Cc Cr Lr
     circuit = Tuple{String,String,String,Num}[]
@@ -77,14 +77,14 @@ function twpa_uniform_circuit(Nj::Int64, pmrpitch::Int64)
     
     # Set the circuit definitions
     circuitdefs = Dict(
-        Lj => IctoLj(3.4e-6),
-        Cg => 45.0e-15,
-        Cc => 30.0e-15,
-        Cr =>  2.8153e-12,
-        Lr => 1.70e-10,
-        Cj => 55e-15,
-        Rleft => 50.0,
-        Rright => 50.0,
+        Lj =>     circuit_params["Lj"],  # IctoLj(3.4e-6),
+        Cg =>     circuit_params["Cg"],  # 45.0e-15,
+        Cc =>     circuit_params["Cc"],  # 30.0e-15,
+        Cr =>     circuit_params["Cr"],  #  2.8153e-12,
+        Lr =>     circuit_params["Lr"],  # 1.70e-10,
+        Cj =>     circuit_params["Cj"],  # 55e-15,
+        Rleft =>  circuit_params["Rleft"],  # 50.0,
+        Rright => circuit_params["Rright"]  #  50.0,
     )
 
     return circuit, circuitdefs
@@ -176,12 +176,12 @@ function twpa_floquet_circuit(Nj::Int64, pmrpitch::Int64, weightwidth::Int64)
     circuitdefs = Dict(
         Rleft => 50.0,
         Rright => 50.0,
-        Lj => IctoLj(1.75e-6),
-        Cg => 76.6e-15,
-        Cc => 40.0e-15,
+        Lj =>  IctoLj(1.75e-6),
+        Cg =>  76.6e-15,
+        Cc =>  40.0e-15,
         Cr =>  1.533e-12,
         Lr => 2.47e-10,
-        Cj => 40e-15,
+        Cj =>  40e-15,
     )  
 
     return circuit, circuitdefs
