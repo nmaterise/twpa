@@ -1,14 +1,12 @@
 # TWPA Design for CMC Superconducting Quantum Workshop
 
 ## Directory structure
--------------------------
 |Directory | Description|
--------------------------
+| -------- | ---------- |
 | src/     | source code|
 | figs/    | figures    |
 | data/    | data files |
 | test/    | test source|
--------------------------
 ## Installation
 1. Install Julia (version=1.9): [here](https://julialang.org/downloads/)
 2. Install Julia packages from a `bash` command prompt
