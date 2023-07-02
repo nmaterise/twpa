@@ -37,7 +37,8 @@ Nmodulationharmonics = (10,)
     Npumpharmonics, circuit, circuitdefs)
 
 # Ipp = 10.0.^(log10(1e-6):0.25:log10(4e-6))
-Ipp = 1e-6:0.1e-6:2.1e-6
+# Pump powers
+Ipp = 1e-6:0.2e-6:2e-6
 println("Ipp: $(Ipp)\n")
 max_gains = []
 for Ip in Ipp
